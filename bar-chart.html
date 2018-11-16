@@ -22,18 +22,20 @@
 <div class="chart"></div>
 <script>
 
-let data = [4, 8, 15, 16, 23, 42, 55, 90];
+let data = [{name: "Canada", pop: 3675}, {name: "US", pop: 32570}];
 
 let x = d3.scaleLinear()
-    .domain([0, d3.max(data)])
-    .range([0, 600]);
+    .domain([0, d3.max(data, function(d) {return d.pop; })])
+    .range([0, 800]); 
+
+
 
 d3.select(".chart")
   .selectAll("div")
     .data(data)
   .enter().append("div")
-    .style("width", function(d) { return x(d) + "px"; })
-    .text(function(d) { return d; });
+    .style("width", function(d) { return x(d.pop) + "px"; })
+    .text(function(d) { return d.name + ' population: ' + d.pop; });
 
 </script>
 </body>
