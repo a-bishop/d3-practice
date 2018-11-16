@@ -1,0 +1,21 @@
+<html>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<body>
+
+<h1>Four Circles</h1>
+
+<svg width="850" height="120">
+</svg>
+
+<script>
+let svg = d3.select("svg");
+svg.selectAll("circle")
+    .data([32, 57, 112, 293]).enter().append("circle")
+    .style("fill", "steelblue")
+    .attr("cy", 60)
+    .attr("cx", function(d, i) { return i * 100 + 30; })
+    .attr("r", function(d) { return Math.sqrt(d); });
+</script>
+
+</body>
+</html> 
