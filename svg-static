@@ -1,9 +1,0 @@
-<html>
-<meta charset="utf-8">
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<body>
-
-<h1>Four Circles</h1>
-
-<svg width="850" height="120">
-</svg>
