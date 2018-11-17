@@ -1,0 +1,66 @@
+<html>
+<meta charset="utf-8">
+<style>
+rect {
+  fill: blue;
+  stroke: pink;
+  stroke-width: 5;
+  fill-opacity: 0.5;
+  stroke-opacity: 0.8;
+}
+ellipse {
+  fill: transparent;
+  stroke: red;
+  stroke-width: 5;
+}
+line {
+  stroke: orange;
+  stroke-width: 5;
+}
+polyline {
+  stroke-width: 5;
+  fill: transparent;
+}
+</style>
+<body>
+
+<h1>Four Rects</h1>
+
+<svg width="400" height="150">
+  <rect y='5' x='5' width='70' height='100'/>
+  <rect y='20' x='50' width='40' height='50'/>
+  <rect y='20' x='100' width='50' height='100'/>
+  <rect y='80' x='80' width='100' height='50'/>
+</svg>
+
+<h1>Four Ellipses</h1>
+
+<svg width="400" height="150">
+  <ellipse cx='100' cy='25' rx='50' ry='20'/>
+  <ellipse cx='120' cy='45' rx='50' ry='20'/>
+  <ellipse cx='140' cy='65' rx='50' ry='20'/>
+  <ellipse cx='160' cy='85' rx='50' ry='20'/>
+</svg>
+
+<h1>Four Lines</h1>
+
+<svg width="400" height="150">
+  <line x1="10" x2="200" y1="5" y2="150"/>
+  <line x1="10" x2="200" y1="20" y2="130"/>
+  <line x1="10" x2="200" y1="35" y2="110"/>
+  <line x1="10" x2="200" y1="55" y2="90"/>
+</svg>
+
+<h1>Three Polylines</h1>
+
+<svg width="400" height="150">
+  <polyline points="40 10 60 40 60 10 80 80 80 20 100 130" stroke="blueviolet"/>
+  <polyline points="40 40 60 90 60 30 80 100 80 400 100 160" stroke="red"/>
+  <polyline points="40 100 80 40 90 10 80 80 120 20 300 150" stroke="orange"/>
+</svg>
+
+<h1>Polygon Star</h1>
+
+<svg width="400" height="300">
+  <polygon points="50 60 55 80 70 80 60 90 65 105 50 95 35 105 40 90 30 80 45 80" stroke="green" fill="transparent" stroke-width="5"/>
+</svg>

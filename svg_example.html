@@ -1,4 +1,5 @@
 <html>
+<meta charset="utf-8">
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <body>
 
@@ -10,11 +11,11 @@
 <script>
 let svg = d3.select("svg");
 svg.selectAll("circle")
-    .data([32, 57, 112, 293]).enter().append("circle")
+    .data([32, 57, 112, 293, 350, 975]).enter().append("circle")
     .style("fill", "steelblue")
     .attr("cy", 60)
-    .attr("cx", function(d, i) { return i * 100 + 30; })
-    .attr("r", function(d) { return Math.sqrt(d); });
+    .attr("cx", (d, i) => i * 100 + 30)
+    .attr("r", d => Math.sqrt(d));
 </script>
 
 </body>
