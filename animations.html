@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+
+<h1> Practice</h1>
+
+<svg class="chart" height='400' width="800"></svg>
+<button onclick="render('pop')">Pop</button>
+<button onclick="render('land')">Land</button>
+<script>
+
+let data = [{name: "Canada", pop: 36.71, land: 67}, {name: "US", pop: 325.7, land: 175}, {name: "Mexico", pop: 129.2, land: 120}, {name: "Brazil", pop: 209.3, land: 250}];
+
+function render(subject) {
+  
+  let max = d3.max(data, d => d[subject])
+
+  let x = d3.scalePow()
+      .domain([0, max])
+      .range([0, 100]);
+
+  let y = d3.scalePow()
+      .domain([0, max])
+      .range([0, 300]);
+
+  let color = d3.scaleLinear()
+      .domain([0, max])
+      .range(["brown", "steelblue"]);
+
+  const circles = d3.select('.chart')
+      .selectAll('div') // this won't be empty after the first time this function runs
+      .data(data, d => d.name)
+
+  const newCircles = circles.enter()
+      .append("circle")
+
+  newCircles.merge(circles)
+      .transition() // animate everything that comes after this line!
+        .attr("cx", (d, i) => x(d[subject]))
+        .attr("cy", d => (y(d[subject])))
+        .attr("r", d => (x(d[subject])))
+        .attr("fill", d => color(d[subject]))
+}
+
+render('pop')
+
+</script>
+</body>
+</html>
